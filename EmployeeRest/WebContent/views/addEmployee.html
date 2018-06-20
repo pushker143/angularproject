@@ -1,0 +1,64 @@
+<div class="container" ng-init="msg=''">
+<center>
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Add Employee</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+						
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Name</span>
+									<input type="text" style="width: 250px" class="form-control" ng-model="employee.employeeName"  placeholder="Enter Name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Designation</span>
+									<input type="text" style="width: 250px" class="form-control" ng-model="employee.designation"  placeholder="Enter Designation"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Experience</span>
+									<input type="number" style="width: 250px" class="form-control" ng-model="employee.experience"  placeholder="Enter Experience"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Mobile</span>
+									<input type="number" style="width: 250px" class="form-control" ng-model="employee.contactNum"  placeholder="Enter Mobile"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Salary</span>
+									<input type="number" style="width: 250px" class="form-control" ng-model="employee.salary"  placeholder="Enter Salary"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button ng-click="addEmployee()" style="width: 349px" class="btn btn-primary btn-lg btn-block login-button">Add</button>
+						</div>
+					{{msg}}
+				</div>
+			</div>
+			</center>
+		</div>

@@ -1,0 +1,111 @@
+<div class="container-fluid text-center">    
+  <div class="row content">
+<div class="col-sm-8 text-left" ng-init="getEmployeeList()">
+	<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Employee Details</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+	<table class="table table-striped" cellpadding="2" cellspacing="2" border="2px" style="width: 90%">
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Designation</th>
+			<th>Experience</th>
+			<th>Contact No</th>
+			<th>Salary</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat="employee in result">
+			<td>{{employee.employeeId}}</td>
+			<td>{{employee.employeeName}}</td>	
+			<td>{{employee.designation}}</td>
+			<td>{{employee.experience}}</td>
+			<td>{{employee.contactNum}}</td>
+			<td>{{employee.salary}}</td>
+			<td>
+			<button ng-click="fetchUpdateEmployee(employee.employeeId)" class="btn btn-success btn-sm">Update</button>
+			<button ng-click="deleteEmployee(employee.employeeId)" class="btn btn-danger btn-sm">
+			Delete </button></td>	
+		</tr>
+		
+	</table>
+	{{delMsg}}
+	{{updMsg}}
+</div>
+<div class="col-sm-4 text-left" ng-show="showUpdate">
+	<center>
+			
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Update Employee</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+						<div class="form-group">
+							
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Emp ID</span>
+									<input type="text" style="width: 250px" class="form-control" ng-model="emp.employeeId"  placeholder="Enter Name" readonly="readonly"/>
+								</div>
+							
+						</div>
+						<div class="form-group">
+							
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Name</span>
+									<input type="text" style="width: 250px" class="form-control" ng-model="emp.employeeName"  placeholder="Enter Name"/>
+								</div>
+							
+						</div>
+
+						<div class="form-group">
+							
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Designation</span>
+									<input type="text" style="width: 250px" class="form-control" ng-model="emp.designation"  placeholder="Enter Designation"/>
+								</div>
+							
+						</div>
+
+						<div class="form-group">
+							
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Experience</span>
+									<input type="number" style="width: 250px" class="form-control" ng-model="emp.experience"  placeholder="Enter Experience"/>
+								</div>
+							
+						</div>
+
+						<div class="form-group">
+							
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Mobile</span>
+									<input type="number" style="width: 250px" class="form-control" ng-model="emp.contactNum"  placeholder="Enter Mobile"/>
+								</div>
+							
+						</div>
+
+						<div class="form-group">
+							
+								<div class="input-group">
+									<span class="input-group-addon" style="width: 99px">Salary</span>
+									<input type="number" style="width: 250px" class="form-control" ng-model="emp.salary"  placeholder="Enter Salary"/>
+								</div>
+							
+						</div>
+
+						<div class="form-group ">
+						<div class="input-group">
+							<button ng-click="updateEmployee()" style="width: 170px" class="btn btn-primary btn-lg btn-block login-button">Update</button><button ng-click="clearupdateEmployee()" style="width: 170px" class="btn btn-primary btn-lg btn-block login-button">Cancel</button>
+							</div>
+						</div>
+					{{msg}}
+				</div>
+			
+			</center>
+</div>
+</div>
+</div>
