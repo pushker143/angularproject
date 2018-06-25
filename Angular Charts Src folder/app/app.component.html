@@ -13,6 +13,7 @@
 <!-- </div> -->
 		</div>
 		<div class="col-sm-4 text-left">
+			<label>Select from Drowpdown to view different charts :</label>
 			<select (change)="chartforoption($event.target.value)">
         	<option *ngFor="let chart of charts" value={{chart.value}}>
             	{{chart.key}}
