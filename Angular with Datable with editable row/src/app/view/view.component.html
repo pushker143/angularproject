@@ -1,0 +1,59 @@
+<div class="container-fluid text-center">    
+  <div class="row content">
+<div class="col-sm-12 text-left">
+	<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Employee Details</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+	<table datatable id="datatableEmp" class="table table-striped" cellpadding="2" cellspacing="2" border="2px">
+		<thead>
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Designation</th>
+			<th>Experience</th>
+			<th>Contact No</th>
+			<th>Salary</th>
+			<th style="width: 157px">Action</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr *ngFor="let employee of result">
+<!-- 			Show when editing -->
+			<td  *ngIf ="employee.employeeId == editRowId">
+				<input style="width: 150px" type="text" readonly [(ngModel)]="emp.employeeId"></td>
+			<td *ngIf ="employee.employeeId == editRowId">
+				<input style="width: 150px" type="text" [(ngModel)]="emp.employeeName"></td>
+			<td *ngIf ="employee.employeeId == editRowId">
+				<input style="width: 150px" type="text" [(ngModel)]="emp.designation"></td>
+			<td *ngIf ="employee.employeeId == editRowId">
+				<input style="width: 150px" type="text" [(ngModel)]="emp.experience"></td>
+			<td *ngIf ="employee.employeeId == editRowId">
+				<input style="width: 150px" type="text" [(ngModel)]="emp.contactNum"></td>
+			<td *ngIf ="employee.employeeId == editRowId">
+				<input style="width: 150px" type="text" [(ngModel)]="emp.salary"></td>
+<!-- 			Not Show when editing -->
+			<td *ngIf ="employee.employeeId !== editRowId">{{employee.employeeId}}</td>
+			<td *ngIf ="employee.employeeId !== editRowId">{{employee.employeeName}}</td>	
+			<td *ngIf ="employee.employeeId !== editRowId">{{employee.designation}}</td>
+			<td *ngIf ="employee.employeeId !== editRowId">{{employee.experience}}</td>
+			<td *ngIf ="employee.employeeId !== editRowId">{{employee.contactNum}}</td>
+			<td *ngIf ="employee.employeeId !== editRowId">{{employee.salary}}</td>
+			<td style="width: 157px" *ngIf ="employee.employeeId !== editRowId">
+			<button (click)="fetchUpdateEmployee(employee.employeeId)" class="btn btn-success btn-sm">Update</button>
+<!-- 			<button *ngIf ="employee.employeeId !== editRowId" (click)="fetchUpdateEmployee(employee.employeeId)" class="btn btn-success btn-sm">Update</button> -->
+			<button (click)="deleteEmployee(employee.employeeId)" class="btn btn-danger btn-sm">Delete </button></td>
+			<td style="width: 157px" *ngIf ="employee.employeeId == editRowId">
+				<button (click)="updateEmployee()" class="btn btn-success btn-sm">Update</button>
+				<button (click)="clearupdateEmployee()" class="btn btn-primary btn-sm">Cancel</button>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	{{delMsg}}
+	{{updMsg}}
+</div>
+</div>
+</div>
